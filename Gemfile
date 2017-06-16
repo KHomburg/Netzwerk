@@ -10,6 +10,11 @@ end
 gem 'rails', '~> 5.0.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
+gem 'bcrypt', '~> 3.1.1' 
+gem 'orm_adapter'
+gem 'railties'
+gem 'responders'
+gem 'warden'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

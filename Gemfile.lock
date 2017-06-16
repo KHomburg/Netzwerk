@@ -161,19 +161,24 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.1)
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
   jquery-rails
+  orm_adapter
   puma (~> 3.0)
   rails (~> 5.0.3)
+  railties
+  responders
   sass-rails (~> 5.0)
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  warden
   web-console (>= 3.3.0)
 
 BUNDLED WITH
