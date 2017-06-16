@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'staticpages#home'
   get '/ueber', to: 'staticpages#ueber'
   get '/kontakt', to: 'staticpages#kontakt'
