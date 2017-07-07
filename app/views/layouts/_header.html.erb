@@ -1,29 +1,32 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/users/index">Netzwerk</a>
-    </div>
+    
+  <% if user_signed_in? %>
 
+  <ul class="nav navbar-nav">
+    
+  <li class="dropdown">
+        </div>
+    <button class= "btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Nutzer
+ 
+    <span class="caret"></span></button>
+     
+    <ul class="dropdown-menu">
 
-    <% if user_signed_in? %>
-    <ul class="nav navbar-nav">
     <li><a href="/users">Alle Nutzer</a></li>
     <li><a href="/posts">Alle Posts</a></li>
-    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Mein Profil", current_user %></li>
+    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    
     </ul>
-    <p class="navbar-text pull-right">
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      </p>
-      <p class="navbar-text pull-right">
-    <% else %>
-
-
-    <% end %>
-  </p>
-      <!-- Form für weitere Links in der Navbar: -->
-
-      <!--<li class="active"><a href="#">Home</a></li> -->
-
-
+  </li>
+  <button type="button" class="btn btn-danger">Neuer Post</button>
+  </ul>
+  </div>
+<% else %>
+<% end %>
 </nav>
+
+
