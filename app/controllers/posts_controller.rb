@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 before_action :authenticate_user!
 
+#"def ... end" methods
+# "@..." are instance variables
   def index
   @post = Post.all
   end
