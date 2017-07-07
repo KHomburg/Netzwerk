@@ -7,8 +7,9 @@
 
     <% if user_signed_in? %>
     <ul class="nav navbar-nav">
-    <li><a href="/users/index">Alle Nutzer</a></li>
+    <li><a href="/users">Alle Nutzer</a></li>
     <li><a href="/posts">Alle Posts</a></li>
+    <li><%= link_to "Profile", current_user %></li>
     </ul>
     <p class="navbar-text pull-right">
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |

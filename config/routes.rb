@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root 'staticpages#home'
   get '/ueber', to: 'staticpages#ueber'
   get '/kontakt', to: 'staticpages#kontakt'
-  get '/users/index', to: 'users#index'
+  #get '/users/index', to: 'users#index'
   resources :posts, only: [:new, :create, :index]
+  resources :users
   #get '/posts/new', to: 'posts#new'
   #get '/posts/index', to: 'posts#index'
 
