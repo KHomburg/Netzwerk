@@ -1,17 +1,13 @@
 
-<div class="row">
+  
 
-<div class="col-sm-6">
-<div class="container">
 <% @post.each do |post| %>
 
-  <div class="center jumbotron">
-    <h2><%= post.content %> </h2> 
-    <p>hier kann weiterer Text eingefügt werden</p> 
-  </div>
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-8"><h2><%= post.content %></h2></div>
+    <div class="col-4"><h2><%= post.user.name %></h2></div> 
+</div>
 
   
 <% end %>
-</div>
-<div class="col-sm-4"></div>
-</div>

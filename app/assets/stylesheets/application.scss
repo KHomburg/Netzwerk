@@ -17,4 +17,16 @@
  *= require_self
  */
 
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
 
+.new-post{
+  background-color:#ffd245;
+}

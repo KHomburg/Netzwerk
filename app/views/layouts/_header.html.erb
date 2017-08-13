@@ -1,32 +1,29 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    
-  <% if user_signed_in? %>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div id="navbar" class="navbar-collapse collapse">
 
-  <ul class="nav navbar-nav">
-    
-  <li class="dropdown">
-        </div>
-    <button class= "btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Nutzer
- 
-    <span class="caret"></span></button>
-     
-    <ul class="dropdown-menu">
 
-    <li><a href="/users">Alle Nutzer</a></li>
-    <li><a href="/posts">Alle Posts</a></li>
-    <li><%= link_to "Mein Profil", current_user %></li>
-    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-    
-    </ul>
-  </li>
-  <button type="button" class="btn btn-danger">Neuer Post</button>
-  </ul>
+      <ul class="nav navbar-nav"> 
+
+        <% if user_signed_in? %> <!-- only signt in users see curtain header options -->
+
+          <li class="dropdown"> <!-- dropdown Menu-->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nutzer <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/users">Alle Nutzer</a></li>
+              <li><%= link_to "Mein Profil", current_user %></li>
+              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li> 
+          <li class="new-post"><a href="./">Neuer Post<span class="sr-only">(current)</span></a></li>
+          <li><a href="/posts">Alle Posts</a></li>  
+
+        <% else %>
+        <% end %>
+      </ul> 
+
+
+
   </div>
-<% else %>
-<% end %>
 </nav>
-
-
