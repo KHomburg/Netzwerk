@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.0.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
-gem 'bcrypt', '~> 3.1.11'
+gem 'bcrypt', platforms: :ruby
 gem 'orm_adapter'
 gem 'railties'
 gem 'responders'
