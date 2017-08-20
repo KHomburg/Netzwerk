@@ -24,13 +24,18 @@
    <br>
    <br>
 
-    <i>(Leer lassen falls keine Änderungen vorgenommen werden sollen)</i><br />
+    <i>(Leer lassen falls keine Änderungen am Passwort vorgenommen werden sollen)</i><br />
     <%= f.password_field :password, autocomplete: "off", :placeholder => 'Neues Passwort' %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
     <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'Neues Password bestätigen' %>   
+    
+    <br>
+    <br>
+
+     <i>(Bei jeder Änderung dein aktuelles Passwort eingeben)</i>
     <%= f.password_field :current_password, autocomplete: "off", :placeholder => 'Aktuelles Passwort' %>
     
 
