@@ -1,38 +1,41 @@
 <div class="border-form-div">
   <h2>Profil Bearbeiten</h2>
 
+
+  Nur das Passwort kann bisher geänder werden. Alle anderen Änderungen werden nicht übernommen
+
+
+
+
+
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
       <%= f.email_field :email, autofocus: true, :placeholder => 'Email address'  %> 
       <%= f.text_field :name, autofocus: true, :placeholder => 'Name'  %>
       <%= f.text_field :firstname, autofocus: true, :placeholder => 'Vorname'   %>
+      <%= f.text_field :bund, autofocus: true, :placeholder => 'Bund'   %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-      <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+   <br>
+   <br>
 
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
+    <i>(Leer lassen falls keine Änderungen vorgenommen werden sollen)</i><br />
+    <%= f.password_field :password, autocomplete: "off", :placeholder => 'Neues Passwort' %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'Neues Password bestätigen' %>   
+    <%= f.password_field :current_password, autocomplete: "off", :placeholder => 'Aktuelles Passwort' %>
+    
 
     <div class="actions">
-      <%= f.submit "Update" %>
+      <%= f.submit "Speichern" %>
     </div>
   <% end %>
 
