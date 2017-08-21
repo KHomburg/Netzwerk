@@ -5,7 +5,9 @@
 
 <div class="post_wrapper">
     <h2><%= post.content %></h2>
-    <h2><%= post.user.name %></h2>
+   
+   <%= link_to post.user.name, user_path(post.user, post) %>  
+
 </div>
 
   

@@ -2,7 +2,7 @@
 <% @user.each do |user| %>
 
   <div class="jumbotron">
-    <h2><%= user.email %></h2> 
+    <h2><%= link_to user.name, user_path(user) %></h2> 
     <p>hier kann weiterer Text eingefügt werden</p> 
   </div>
 
