@@ -2,13 +2,6 @@
   <h2>Profil Bearbeiten</h2>
 
 
-  Nur das Passwort kann bisher geänder werden. Alle anderen Änderungen werden nicht übernommen
-
-
-
-
-
-
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -35,7 +28,7 @@
     <br>
     <br>
 
-     <i>(Bei jeder Änderung dein aktuelles Passwort eingeben)</i>
+     <i>(Bei jeder Änderung dein aktuelles Passwort eingeben)</i><br>
     <%= f.password_field :current_password, autocomplete: "off", :placeholder => 'Aktuelles Passwort' %>
     
 

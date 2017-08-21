@@ -1,10 +1,12 @@
 
 <% @user.each do |user| %>
 
-  <div class="jumbotron">
-    <h2><%= link_to user.name, user_path(user) %></h2> 
-    <p>hier kann weiterer Text eingefügt werden</p> 
-  </div>
+
+ 
+      <div class="border-form-div-1">
+        <h2><%= link_to user.firstname + " " + user.name, user_path(user) %></h2>
+        <p> <%= user.bund + " | " + "Aktiv seit: " + user.aktiv_seit.strftime("%d %m %Y").to_s %> 
+      </div>
 
   
 <% end %>

@@ -3,12 +3,13 @@
 
 <% @post.each do |post| %>
 
-<div class="post_wrapper">
-    <h2><%= post.content %></h2>
-   
-   <%= link_to post.user.name, user_path(post.user, post) %>  
+ 
+        <div class="border-form-div-1">
+            <h3><%= post.title %></h3>
+            <p><%= post.content %></p>
+            <%= link_to post.user.name + " | " + post.user.bund + " | " + time_ago_in_words(post.created_at) + " ago", user_path(post.user, post) %>  
+        </div>
 
-</div>
 
   
 <% end %>
