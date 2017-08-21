@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 before_action :authenticate_user!
 
 def index
-  @user = User.all
+  @user = User.paginate(:page => params[:page], :per_page => 30)
 end
 
 def show

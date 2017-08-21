@@ -21,4 +21,11 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* 
+
+Work to be done:
+
+- picture upload
+- comment on posts
+- direct message
+- search

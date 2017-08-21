@@ -4,7 +4,7 @@ before_action :authenticate_user!
 #"def ... end" methods
 # "@..." are instance variables
   def index
-    @post = Post.all
+    @post = Post.paginate(:page => params[:page], :per_page => 10)
     
   end
 
