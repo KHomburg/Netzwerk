@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   #get '/users/index', to: 'users#index'
   resources :posts, only: [:new, :create, :index]
   resources :users
+
+  
   #get '/posts/new', to: 'posts#new'
   #get '/posts/index', to: 'posts#index'
 

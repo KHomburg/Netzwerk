@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
 before_action :authenticate_user!
 
-def index
-  @user = User.paginate(:page => params[:page], :per_page => 30)
-end
+  def index
+    @user = User.search(params[:term], params[:page])
 
-def show
-  @user = User.find(params[:id])
-end
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+
+
+
+
+
 
 
 
