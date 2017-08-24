@@ -28,4 +28,4 @@ Work to be done:
 - picture upload
 - comment on posts
 - direct message
-- search
+- tel und wohnort columns to user

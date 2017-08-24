@@ -3,7 +3,6 @@ before_action :authenticate_user!
 
   def index
     @user = User.search(params[:term], params[:page])
-
   end
 
   def show

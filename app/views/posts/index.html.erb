@@ -1,7 +1,4 @@
 
-  
-
-
 <% @post.each do |post| %> 
     <div class="border-form-div-1">
         <h3><%= post.title %></h3>
@@ -9,6 +6,7 @@
         <%= link_to post.user.name + " | " + post.user.bund + " | " + time_ago_in_words(post.created_at) + " ago", user_path(post.user, post) %>  
     </div>  
 <% end %>
+
 
 <div class="digg_pagination">
     <%= will_paginate @post %>
