@@ -29,3 +29,6 @@ Work to be done:
 - comment on posts
 - direct message
 - tel und wohnort columns to user
+- page for users, that shows all posts of one user
+- delete button
+- fehler unpermitted parameters in sign-up

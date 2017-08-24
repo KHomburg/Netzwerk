@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   get '/ueber', to: 'staticpages#ueber'
   get '/kontakt', to: 'staticpages#kontakt'
   #get '/users/index', to: 'users#index'
-  resources :posts, only: [:new, :create, :index]
+  
+  resources :posts, only: [:new, :create, :index, :show] do
+      resources :comments
+  end
+
+  resources :comments, only: [:new, :create, :index, :show]
   resources :users
 
   
