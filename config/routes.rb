@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get '/kontakt', to: 'staticpages#kontakt'
   #get '/users/index', to: 'users#index'
   
-  resources :posts, only: [:new, :create, :index, :show] do
+  resources :posts, only: [:new, :create, :index, :show, :destroy] do
       resources :comments
   end
 
-  resources :comments, only: [:new, :create, :index, :show]
+  resources :comments, only: [:new, :create, :index, :show, :destroy]
   resources :users
 
   

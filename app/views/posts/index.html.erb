@@ -3,7 +3,14 @@
     <div class="border-form-div-1">
         <h3><%= link_to post.title , post_path(post) %></h3>
         <p><%= post.content %></p>
-        <%= link_to post.user.firstname + " " +post.user.name + " | " + post.user.bund + " | " + time_ago_in_words(post.created_at) + " ago", user_path(post.user, post) %>  
+        <%= link_to post.user.firstname + " " +post.user.name + " | " + post.user.bund + " | " + time_ago_in_words(post.created_at) + " ago", user_path(post.user, post) %>
+        
+        <% if current_user.id == post.user_id %>
+        <button type="button" class="btn btn-default btn-sm">
+            <%= link_to "Löschen", post, method: :delete %>
+        </button>
+        <% end %>
+        
     </div>  
 <% end %>
 

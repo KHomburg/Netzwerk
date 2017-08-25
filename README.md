@@ -26,9 +26,6 @@ Things you may want to cover:
 Work to be done:
 
 - picture upload
-- comment on posts
 - direct message
 - tel und wohnort columns to user
 - page for users, that shows all posts of one user
-- delete button
-- fehler unpermitted parameters in sign-up

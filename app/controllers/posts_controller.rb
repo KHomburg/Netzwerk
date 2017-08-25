@@ -9,10 +9,11 @@ before_action :authenticate_user!
     @post = Post.search(params[:term], params[:page])    
   end
 
-  #def new
-   # @post = Post.new
- # end
-
+  def new
+    @user = current_user
+    @post = Post.new
+  end 
+  
   def create
     @user = current_user
     @post = current_user.posts.build(post_params)
@@ -22,9 +23,15 @@ before_action :authenticate_user!
 
   def show
     @user = current_user
-    @post = Post.find(params[:id])
-    @comments = @post.comments.all
+    @post = Post.find(params[:id]) #takes the id out of the blog-show-url, find the post and safes it to @post
+    @comments = @post.comments.all #takes all comments of the post (for showing all comments on a post)
     @comment = current_user.comments.build
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to action: :index
   end
 
   private
@@ -33,7 +40,4 @@ before_action :authenticate_user!
     params.require(:post).permit(:content, :title)
     end
 
-      #def comment_params
-    #params.require(:comment).permit(:content, :post_id, :user_id, :id, @user, @post, @comment)
-    #end
   end

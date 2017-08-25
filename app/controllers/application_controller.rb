@@ -9,12 +9,20 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :firstname, :date_of_birth, :aktiv_seit, :bund, :bio])
+    attributes = [:username, :name, :firstname, :date_of_birth, :aktiv_seit, :bund, :bio]
+    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
+    devise_parameter_sanitizer.permit(:account_update, keys: attributes)
   end
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :firstname, :date_of_birth, :aktiv_seit, :bund, :bio])
-  end
+
+
+ # def configure_permitted_parameters
+   # devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :firstname, :date_of_birth, :aktiv_seit, :bund, :bio])
+  #end
+
+  #def configure_permitted_parameters
+   # devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :firstname, :date_of_birth, :aktiv_seit, :bund, :bio])
+  #end
 
 
   # Confirms a logged-in user.

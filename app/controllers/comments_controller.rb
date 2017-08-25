@@ -1,27 +1,28 @@
 class CommentsController < ApplicationController
     
-before_action :set_post
+  #before_action :set_post
 
   def create
-    @comment = @post.comments.build(comment_params)
-    @comment.user_id = current_user.id
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params) 
+    @comment.user_id = current_user.id #puts the current user id in the user_id column of the comments table
     @user = current_user
 
     if @comment.save
-      flash[:success] = "You commented the hell out of that post!"
+      flash[:success] = "Comment"
       redirect_to :back
     else
-      flash[:alert] = "Check the comment form, something went horribly wrong."
+      flash[:alert] = "something went wrong."
       render root_path
     end
   end
 
   def destroy
-    @comment = @post.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
 
     @comment.destroy
-    flash[:success] = "Comment deleted :("
-    redirect_to root_path
+    flash[:success] = "Comment deleted"
+    redirect_to :back
   end
 
   private
@@ -30,8 +31,9 @@ before_action :set_post
     params.require(:comment).permit(:content)
   end
 
-  def set_post
-    @post = Post.find(params[:post_id])
-  end
+ # def set_post
+ #   @post = Post.find(params[:post_id]) #takes the id out of the blog-show-url, find the post and safes it to @post
+ # end
 
 end
+
