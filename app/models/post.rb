@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+  attachment :image
 
   def self.search(term, page) #function for search and paginate - search doesnt work, so no view for that
     if term

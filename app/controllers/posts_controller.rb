@@ -37,7 +37,7 @@ before_action :authenticate_user!
   private
 
     def post_params
-    params.require(:post).permit(:content, :title)
+    params.require(:post).permit(:content, :title, :image, :image_id)
     end
 
   end

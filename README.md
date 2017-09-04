@@ -29,3 +29,9 @@ Work to be done:
 - direct message
 - tel und wohnort columns to user
 - page for users, that shows all posts of one user
+- edit user profile page
+
+
+ -> config/application.rb added for refile to work. Maybe must be deleted in deployment:
+    Refile.store ||= Refile::Backend::FileSystem.new("/tmp/uploads/store".to_s)
+    Refile.cache ||= Refile::Backend::FileSystem.new("/tmp/uploads/cache".to_s)
