@@ -103,6 +103,7 @@ GEM
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
+    pg (0.18.1-x86-mingw32)
     puma (3.10.0)
     rack (2.0.3)
     rack-protection (2.0.0)
@@ -126,6 +127,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.5)
       actionpack (= 5.0.5)
       activesupport (= 5.0.5)
@@ -210,8 +216,10 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   orm_adapter
+  pg (= 0.18.1)
   puma (~> 3.0)
   rails (~> 5.0.3)
+  rails_12factor
   railties
   refile!
   refile-mini_magick
@@ -226,4 +234,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.13.7
+   1.15.4
