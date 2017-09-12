@@ -25,13 +25,17 @@ Things you may want to cover:
 
 Work to be done:
 
-- picture upload
 - direct message
 - tel und wohnort columns to user
 - page for users, that shows all posts of one user
 - edit user profile page
+- Pictures preview also on Posts/index
+- e-mail verification
+- master password
+
+fix
+- fix post page if there is no image
+- header fix in small windows
+- fix max 140. char per post
 
 
- -> config/application.rb added for refile to work. Maybe must be deleted in deployment:
-    Refile.store ||= Refile::Backend::FileSystem.new("/tmp/uploads/store".to_s)
-    Refile.cache ||= Refile::Backend::FileSystem.new("/tmp/uploads/cache".to_s)
