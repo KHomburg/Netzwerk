@@ -36,6 +36,5 @@ Work to be done:
 fix
 - fix post page if there is no image
 - header fix in small windows
-- fix max 140. char per post
 
 
