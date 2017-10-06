@@ -1,6 +1,8 @@
 <div class="border-form-div-1">
     <h2>  <%= @post.title %> </h2> <br>
-        <%= image_tag attachment_url(@post, :image, :fill, 300, 300, format: "jpg") %>
+        <% if @post.image_id? %>
+        <%= image_tag attachment_url(@post, :image, :fill, 400, 400, format: "jpg") %>
+        <% end %>
     <h4>  <%= @post.content %> </h4> <br>
 </div>
 

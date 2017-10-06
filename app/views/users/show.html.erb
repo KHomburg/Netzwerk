@@ -1,11 +1,9 @@
 
 
-<div class="border-form-div-1">          <h3> Vorname:      <%= @user.firstname %> </h3> <br></div>
-<div class="border-form-div-1">          <h3> Nachname:     <%= @user.name %> </h3> <br></div>
+<div class="border-form-div-1">          <h3> <%= @user.firstname %> <%= @user.name %> | <%= @user.bund %></h3> <br></div>
+<div class="border-form-div-1">          <h3> <%= @user.email %> </h3> <br></div>
 <div class="border-form-div-1">          <h3> Geburtstag:   <%= @user.date_of_birth.strftime("%d.%m.%Y") %> </h3> <br></div>
-<div class="border-form-div-1">          <h3> E-Mail:      <%= @user.email %> </h3> <br></div>
 <div class="border-form-div-1">          <h3> Aktiv seit:   <%= @user.aktiv_seit.strftime("%d.%m.%Y") %> </h3> <br></div>
-<div class="border-form-div-1">          <h3> Bund:         <%= @user.bund %> </h3> <br></div>
 <div class="border-form-div-1">          <h3> Werdegang:    <%= @user.bio %> </h3> <br></div>
 </div>
 
