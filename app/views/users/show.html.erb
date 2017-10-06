@@ -4,6 +4,8 @@
 <div class="border-form-div-1">          <h3> <%= @user.email %> </h3> <br></div>
 <div class="border-form-div-1">          <h3> Geburtstag:   <%= @user.date_of_birth.strftime("%d.%m.%Y") %> </h3> <br></div>
 <div class="border-form-div-1">          <h3> Aktiv seit:   <%= @user.aktiv_seit.strftime("%d.%m.%Y") %> </h3> <br></div>
-<div class="border-form-div-1">          <h3> Werdegang:    <%= @user.bio %> </h3> <br></div>
-</div>
+<div class="border-form-div-1">          <h3> Werdegang: <br>   <%= @user.bio %> </h3> <br></div>
+<div class="border-form-div-1">          <h3><%= link_to 'Edit profile', edit_user_registration_path %></h3> <br></div>
+<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+
 
