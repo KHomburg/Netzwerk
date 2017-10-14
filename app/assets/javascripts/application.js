@@ -16,3 +16,10 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+document.addEventListener("turbolinks:load", function() {
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown("fast");
+    });
+});
+})

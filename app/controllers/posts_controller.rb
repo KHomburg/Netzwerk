@@ -6,7 +6,8 @@ before_action :authenticate_user!
 # "@..." are instance variables
   def index
     #@post = Post.paginate(:page => params[:page], :per_page => 10)
-    @post = Post.search(params[:term], params[:page])    
+    @posts = Post.search(params[:term], params[:page])
+    @post = current_user.posts.build    
   end
 
   def new

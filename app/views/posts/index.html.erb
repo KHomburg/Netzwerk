@@ -1,5 +1,35 @@
 
-<% @post.each do |post| %> 
+
+        
+        <div class="border-form-div-1">  
+                <div id="flip">      
+                <h3>Neuer Post</h3>
+            </div>
+                <div id="panel">
+                <%= form_for [@post], html: { multipart: true } do |f| %>
+            
+                <div class="form-group">
+                <%= f.text_field :title, class: 'form-control', :placeholder => 'Post Titel'  %>
+                </div>
+            
+                <div class="form-group">        
+                <%= f.text_area :content, class: 'form-control textarea', :placeholder => 'Text'  %>        
+                </div>
+            
+                <div class="form-group">
+                <%= f.attachment_field :image  %>
+                </div>
+            
+                <div class="form-group">
+                <%= f.submit "Create" , class: "btn btn-primary" %>
+                </div>  
+            </div>     
+              
+            </div>
+        <% end %>
+
+
+<% @posts.each do |post| %> 
     <div class="border-form-div-1">
         <h3><%= link_to post.title , post_path(post) %></h3>
         <p><%= post.content %></p>
@@ -16,7 +46,7 @@
 
 
 <div class="digg_pagination">
-    <%= will_paginate @post %>
+    <%= will_paginate @posts %>
 </div>
 
 

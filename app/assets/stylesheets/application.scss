@@ -17,15 +17,15 @@
  *= require_self
  */
 
-  .navbar-nav {
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    > li {
-      float: none;
-      display: inline-block;
-    }
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  > li {
+    float: none;
+    display: inline-block;
   }
+}
 
 .new-post{
   background-color:#ffd245;
@@ -44,6 +44,7 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
           box-shadow: 0 1px 2px rgba(0,0,0,.05);
+
 }
 .border-form-div .form-signin-heading,
 .border-form-div .checkbox {
@@ -71,6 +72,10 @@
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
           box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.textarea {
+  resize: vertical;
 }
 
 .digg_pagination {
@@ -120,3 +125,12 @@
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+
+#panel, #flip {
+  cursor: pointer;
+}
+
+#panel {
+  display: none;
+}
